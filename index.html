@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 프리미엄 리더 스타일을 위한 구글 폰트 적용 (Noto Serif KR + Pretendard) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <title>Sullivan Weather Reader</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 좌측 사이드바: 날짜 리스트 -->
+      <aside class="sidebar">
+        <h1 class="logo">Sullivan.</h1>
+        <p class="subtitle">Daily Weather Archive</p>
+        <nav id="date-list" class="date-list">
+          <!-- JS에서 동적으로 생성됨 -->
+        </nav>
+      </aside>
+
+      <!-- 우측 메인 콘텐츠: 뉴스 리더 영역 -->
+      <main class="content">
+        <header class="content-header">
+          <h2 id="current-date-title">Loading...</h2>
+        </header>
+        <div id="weather-container" class="weather-container">
+          <!-- JS에서 뉴스가 렌더링됨 -->
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

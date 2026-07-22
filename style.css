@@ -1,0 +1,190 @@
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --accent-color: #1a1a1a;
+  --border-color: #f0f0f0;
+  --hover-bg: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 280px;
+  border-right: 1px solid var(--border-color);
+  padding: 4rem 2.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logo {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--accent-color);
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.date-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-item {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.date-item:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.date-item.active {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* Main Content Styling */
+.content {
+  flex: 1;
+  padding: 4rem 5rem 6rem 5rem;
+  max-width: 800px;
+}
+
+.content-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#current-date-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: -0.03em;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.weather-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.weather-publisher {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.weather-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.weather-title a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.weather-title a:hover {
+  color: #555555;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.weather-snippet {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  #app {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .date-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .date-item {
+    white-space: nowrap;
+    padding: 0.6rem 1rem;
+  }
+  
+  .content {
+    padding: 3rem 1.5rem;
+  }
+  
+  #current-date-title {
+    font-size: 2rem;
+  }
+  
+  .weather-title {
+    font-size: 1.4rem;
+  }
+}
